@@ -130,6 +130,71 @@ footer{padding:1.5rem 3rem;border-top:1px solid var(--line);display:flex;justify
 .f-name{font-family:var(--font-serif);font-size:.85rem;color:var(--ink2)}
 .fade-in{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
 .fade-in.visible{opacity:1;transform:none}
+
+/* ========= 手机端完美自适应 (修复照片不显示问题) ========= */
+@media (max-width: 900px) {
+  /* 核心修复：将关于我部分的左右两列，改为上下单列 */
+  #about {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    padding: 3rem 1.5rem !important;
+  }
+  /* 照片区域 */
+  #about > div:first-child {
+    position: relative !important;
+    height: auto !important;
+    top: auto !important;
+    min-height: 40vh;
+  }
+  /* 照片本身 */
+  #about > div:first-child img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 50vh;
+    object-fit: contain;
+  }
+  /* 右侧文字区域 */
+  #about > div:last-child {
+    padding: 0 !important;
+    border-left: none !important;
+  }
+  /* 导航栏 */
+  nav {
+    padding: 1rem !important;
+  }
+  .nav-links {
+    gap: 1rem !important;
+  }
+  /* 作品区域 */
+  .work-header {
+    padding: 2rem 1.5rem !important;
+  }
+  .cat-nav {
+    padding: 0 1.5rem !important;
+  }
+  .cat-label-sm {
+    padding: 0 1.5rem !important;
+  }
+  .h-track {
+    padding: 0 1.5rem !important;
+  }
+  .masonry {
+    padding: 1rem 1.5rem 0 !important;
+    columns: 2 !important;
+  }
+  /* 联系区域 */
+  #contact {
+    padding: 3rem 1.5rem !important;
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  /* footer */
+  footer {
+    padding: 1rem 1.5rem !important;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
 </style>
 </head>
 <body>
@@ -161,7 +226,6 @@ footer{padding:1.5rem 3rem;border-top:1px solid var(--line);display:flex;justify
 
 <section id="about" class="fade-in" style="border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;min-height:90vh">
   <div style="position:relative;width:100%;min-height:50vh;background:#111;display:flex;align-items:center;justify-content:center">
-    <!-- 替换个人写真图片路径：将 src 改为你的照片地址 -->
     <img src="images/1.jpg" alt="钟熙凯的个人写真" style="width:100%;height:auto;object-fit:cover;display:block;">
   </div>
   <div style="padding:6rem 4rem;border-left:1px solid var(--line)">
@@ -194,7 +258,6 @@ footer{padding:1.5rem 3rem;border-top:1px solid var(--line);display:flex;justify
     <button class="cat-btn" data-cat="aiapp">AI 应用式软件设计</button>
     <button class="cat-btn" data-cat="figma">Figma UI 设计</button>
   </div>
-  <!-- 动态作品容器：五个分类内容将由js完全生成 -->
   <div id="dynamic-work-container"></div>
 </section>
 
@@ -207,13 +270,6 @@ footer{padding:1.5rem 3rem;border-top:1px solid var(--line);display:flex;justify
 <div id="lightbox"><button class="lb-x" onclick="closeLB()">✕</button><img id="lb-img" src="" alt="大图预览"><div class="lb-info"><div class="lb-cat-l" id="lb-cat"></div><div class="lb-title" id="lb-title"></div></div></div>
 
 <script>
-// --------------------------------------------------------------
-// 作品数据模型 (易于添加/修改照片)
-// 每个作品包含: id, category(分类key), title, imgUrl, type(用于横向滚动尺寸: 'tall','wide','sq' 或 'masonry'), subtitle(可选)
-// 横向滚动区域展示 feature 作品 (type 指定尺寸)，瀑布流区域展示更多作品 (type='masonry')
-// 为了方便，我们为每个分类分别定义 横向展示卡片(featured) 和 瀑布流卡片
-// 修改图片只需更改 imgUrl 字段即可。
-// --------------------------------------------------------------
 const portfolioData = {
   detail: {
     name: "详情页主图设计 · Product Visual Design",
@@ -287,7 +343,6 @@ const portfolioData = {
   }
 };
 
-// 生成横向卡片的HTML (根据type)
 function renderFeatured(categoryKey, items) {
   if (!items || items.length === 0) return '<div class="h-track" style="justify-content:center;color:var(--ink3);min-height:200px">暂无作品，请在portfolioData中添加</div>';
   let html = '<div class="h-track">';
@@ -319,7 +374,6 @@ function renderMasonry(items) {
   return html;
 }
 
-// 生成整个作品区域
 function buildAllCategories() {
   const container = document.getElementById('dynamic-work-container');
   if (!container) return;
@@ -337,12 +391,9 @@ function buildAllCategories() {
     </div>`;
   });
   container.innerHTML = allHtml;
-  // 默认激活 detail
   document.querySelectorAll('.work-cat').forEach(wc => wc.classList.remove('active'));
   const defaultCat = document.getElementById('cat-detail');
   if(defaultCat) defaultCat.classList.add('active');
-  
-  // 重新绑定横向滚动拖拽事件 (因为 .h-track 是新生成的)
   bindDragScroll();
 }
 
@@ -367,7 +418,6 @@ function bindDragScroll() {
   });
 }
 
-// 灯箱函数 (支持图片)
 function openLB(cat, name, imgSrc) {
   const lbImg = document.getElementById('lb-img');
   const lbCat = document.getElementById('lb-cat');
@@ -390,7 +440,6 @@ function closeLB() {
 document.getElementById('lightbox').addEventListener('click', function(e){ if(e.target === this || e.target.classList.contains('lb-x')) closeLB(); });
 document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLB(); });
 
-// 分类按钮切换 (保留原有逻辑, 但需重新绑定由于动态生成后active类切换)
 function initCategoryTabs() {
   const btns = document.querySelectorAll('.cat-btn');
   btns.forEach(btn => {
@@ -407,15 +456,11 @@ function categoryHandler() {
   if(activeCat) activeCat.classList.add('active');
 }
 
-// 初始化所有动态内容
 document.addEventListener('DOMContentLoaded', () => {
   buildAllCategories();
   initCategoryTabs();
-  // 重新触发一次滚动条样式，确保现有拖拽生效（已经bindDragScroll内部调用过了，但build里面调用了bindDragScroll，所以没问题）
-  // 额外为.masonry 内图片加载优化
 });
 
-// 光标特效、粒子、nav滚动条保留原样
 (function cursorEffect(){
   const cur=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
   let mx=0,my=0,rx=0,ry=0;
@@ -428,7 +473,6 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>60));
 
-// 粒子背景 (原样保留)
 (function particles(){
   const cv=document.getElementById('particle-canvas');
   if(!cv) return;
@@ -467,9 +511,11 @@ window.addEventListener('scroll',()=>document.getElementById('nav').classList.to
   initPts(); draw();
 })();
 
-// fade-in 观察器
 const faders=document.querySelectorAll('.fade-in');
-if(faders.length) new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1}).observe(document.querySelector('.fade-in'));
+if(faders.length) {
+  const observer = new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1});
+  faders.forEach(el=>observer.observe(el));
+}
 document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}})});
 </script>
 </body>
