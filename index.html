@@ -251,8 +251,125 @@ footer{padding:1.5rem 3rem;border-top:1px solid var(--line);display:flex;justify
     </div>
     <div class="cv-section">
       <div class="cv-section-title">工具技能 · Tools &amp; Skills</div>
-      <div class="cv-item"><div class="cv-year">AI 生图</div><div><div class="skills-wrap"><div class="skill-card"><span class="skill-tag">ComfyUI</span><div class="tool-icon"><svg viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="8" fill="#1a1917"/><path d="M8 18c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10S8 23.523 8 18z" stroke="#f7f6f3" stroke-width="1.5"/><path d="M14 18h8M18 14v8" stroke="#f7f6f3" stroke-width="1.5" stroke-linecap="round"/></svg></div></div><div class="skill-card"><span class="skill-tag">Nano Banana</span><div class="tool-icon"><svg viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="8" fill="#2a2200"/><path d="M10 24c4-8 12-14 16-10-4 2-8 8-8 12" stroke="#f5c842" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="12" r="2" fill="#f5c842"/></svg></div></div><div class="skill-card"><span class="skill-tag">Running Hub</span><div class="tool-icon"><svg viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="8" fill="#0a2a1a"/><circle cx="18" cy="18" r="7" stroke="#34d399" stroke-width="1.5"/><path d="M15 18l2 2 4-4" stroke="#34d399" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="skill-card"><span class="skill-tag">即梦 AI</span><div class="tool-icon"><svg viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="8" fill="#2d1a4a"/><path d="M18 8l2.5 7h7.5l-6 4.5 2.5 7L18 22l-6.5 4.5 2.5-7L8 15h7.5z" fill="#c9a0ff" opacity=".9"/></svg></div></div></div></div></div>
-      <div class="cv-item"><div class="cv-year">设计 / 开发</div><div><div class="skills-wrap"><div class="skill-card"><span class="skill-tag">Photoshop</span><div class="tool-icon"><svg viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="8" fill="#001e36"/><text x="8" y="24" font-size="14" font-family="Arial" font-weight="700" fill="#31a8ff">Ps</text></svg></div></div><div class="skill-card"><span class="skill-tag">Figma</span><div class="tool-icon"><svg viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="8" fill="#1e1e1e"/><circle cx="21" cy="18" r="4" fill="#1abcfe"/><path d="M13 10h4a4 4 0 010 8h-4V10z" fill="#ff7262"/><path d="M13 18h4a4 4 0 010 8h-4v-8z" fill="#0acf83"/><path d="M13 10h4a4 4 0 000 8h-4V10z" fill="#f24e1e" opacity=".01"/><circle cx="13" cy="26" r="4" fill="#a259ff"/></svg></div></div><div class="skill-card"><span class="skill-tag">Openclaw</span><div class="tool-icon"><svg viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="8" fill="#0f1923"/><path d="M12 24c0-6 4-12 6-12s6 6 6 12" stroke="#60a5fa" stroke-width="1.8" stroke-linecap="round"/><path d="M18 12v4" stroke="#60a5fa" stroke-width="1.8" stroke-linecap="round"/></svg></div></div></div></div></div>
+
+      <!-- AI 生图 -->
+      <div class="cv-item"><div class="cv-year">AI 生图</div><div><div class="skills-wrap">
+
+        <!-- ComfyUI + 子模型 (无官方图标，手绘) -->
+        <div style="display:flex;flex-direction:column;align-items:flex-start;gap:.5rem">
+          <div class="skill-card">
+            <span class="skill-tag">ComfyUI</span>
+            <div class="tool-icon" style="background:#1a1917;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:2px"><img src="https://cdn.simpleicons.org/comfyui/ffffff" width="28" height="28" alt="ComfyUI" style="display:block" onerror="this.parentElement.innerHTML='<svg viewBox=\'0 0 36 36\' fill=\'none\'><rect width=\'36\' height=\'36\' rx=\'8\' fill=\'%231a1917\'/><rect x=\'9\' y=\'9\' width=\'8\' height=\'8\' rx=\'2\' fill=\'none\' stroke=\'%23f7f6f3\' stroke-width=\'1.4\'/><rect x=\'19\' y=\'9\' width=\'8\' height=\'8\' rx=\'2\' fill=\'none\' stroke=\'%23f7f6f3\' stroke-width=\'1.4\'/><rect x=\'9\' y=\'19\' width=\'8\' height=\'8\' rx=\'2\' fill=\'none\' stroke=\'%23f7f6f3\' stroke-width=\'1.4\'/><rect x=\'19\' y=\'19\' width=\'8\' height=\'8\' rx=\'2\' fill=\'none\' stroke=\'%23f7f6f3\' stroke-width=\'1.4\'/></svg>'"></div>
+          </div>
+          <div style="display:flex;gap:.5rem;padding-left:.4rem;flex-wrap:wrap">
+            <span style="font-size:.6rem;color:var(--ink3);padding:.18rem .55rem;border:1px solid var(--line);border-radius:3px">Z-IMAGE</span>
+            <span style="font-size:.6rem;color:var(--ink3);padding:.18rem .55rem;border:1px solid var(--line);border-radius:3px">FLUX.2</span>
+            <span style="font-size:.6rem;color:var(--ink3);padding:.18rem .55rem;border:1px solid var(--line);border-radius:3px">WAN2.2</span>
+          </div>
+        </div>
+
+        <!-- ChatGPT Image2 — OpenAI 官方图标 -->
+        <div class="skill-card"><span class="skill-tag">ChatGPT Image2</span>
+          <div class="tool-icon" style="background:#0d0d0d;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:4px"><img src="https://cdn.simpleicons.org/openai/ffffff" width="26" height="26" alt="OpenAI" style="display:block"></div>
+        </div>
+
+        <!-- Kling 3.2 — 无官方图标，手绘 -->
+        <div class="skill-card"><span class="skill-tag">Kling 3.2</span>
+          <div class="tool-icon"><svg viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="8" fill="#0a0a1a"/><circle cx="18" cy="18" r="8" fill="none" stroke="#7c6af7" stroke-width="1.4"/><path d="M15 13l8 5-8 5V13z" fill="#7c6af7"/></svg></div>
+        </div>
+
+        <!-- Sora 2 — 无官方图标，手绘 -->
+        <div class="skill-card"><span class="skill-tag">Sora 2</span>
+          <div class="tool-icon"><svg viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="8" fill="#0a0a0a"/><ellipse cx="18" cy="18" rx="9" ry="5.5" stroke="#e0e0e0" stroke-width="1.4"/><ellipse cx="18" cy="18" rx="5.5" ry="9" stroke="#e0e0e0" stroke-width="1.4"/><circle cx="18" cy="18" r="2.5" fill="#e0e0e0"/></svg></div>
+        </div>
+
+        <!-- VEO 3.1 — Google 官方图标 -->
+        <div class="skill-card"><span class="skill-tag">VEO 3.1</span>
+          <div class="tool-icon" style="background:#1a0533;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:4px"><img src="https://cdn.simpleicons.org/google/ffffff" width="26" height="26" alt="Google" style="display:block"></div>
+        </div>
+
+        <!-- Civitai — 官方图标 -->
+        <div class="skill-card"><span class="skill-tag">CIVITAI</span>
+          <div class="tool-icon" style="background:#1a1a2e;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:4px"><img src="https://cdn.simpleicons.org/civitai/ffffff" width="26" height="26" alt="Civitai" style="display:block" onerror="this.parentElement.innerHTML='<svg viewBox=\'0 0 36 36\' fill=\'none\'><rect width=\'36\' height=\'36\' rx=\'8\' fill=\'%231a1a2e\'/><path d=\'M18 9l2.5 5.5H26l-4.5 3.5 1.5 5.5L18 20l-5 3.5 1.5-5.5L10 14.5h5.5z\' fill=\'%23e8e0ff\' stroke=\'%23a08bff\' stroke-width=\'.6\'/></svg>'"></div>
+        </div>
+
+        <!-- Nano Banana — 无官方图标，手绘 -->
+        <div class="skill-card"><span class="skill-tag">Nano Banana</span>
+          <div class="tool-icon"><svg viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="8" fill="#2a2200"/><path d="M10 24c4-8 12-14 16-10-4 2-8 8-8 12" stroke="#f5c842" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="12" r="2" fill="#f5c842"/></svg></div>
+        </div>
+
+        <!-- RunningHub — 无官方图标，手绘 -->
+        <div class="skill-card"><span class="skill-tag">RunningHub</span>
+          <div class="tool-icon"><svg viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="8" fill="#0a2a1a"/><circle cx="18" cy="18" r="7" stroke="#34d399" stroke-width="1.5"/><path d="M15 18l2 2 4-4" stroke="#34d399" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+
+        <!-- 即梦 AI — 无官方图标，手绘 -->
+        <div class="skill-card"><span class="skill-tag">即梦 AI</span>
+          <div class="tool-icon"><svg viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="8" fill="#2d1a4a"/><path d="M18 8l2.5 7h7.5l-6 4.5 2.5 7L18 22l-6.5 4.5 2.5-7L8 15h7.5z" fill="#c9a0ff" opacity=".9"/></svg></div>
+        </div>
+
+      </div></div></div>
+
+      <!-- 设计 / 开发 -->
+      <div class="cv-item"><div class="cv-year">设计 / 开发</div><div><div class="skills-wrap">
+
+        <!-- Photoshop — 官方图标 -->
+        <div class="skill-card"><span class="skill-tag">Photoshop</span>
+          <div class="tool-icon" style="background:#001e36;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:4px"><img src="https://cdn.simpleicons.org/adobephotoshop/31a8ff" width="26" height="26" alt="Photoshop" style="display:block"></div>
+        </div>
+
+        <!-- Figma — 官方图标 -->
+        <div class="skill-card"><span class="skill-tag">Figma</span>
+          <div class="tool-icon" style="background:#1e1e1e;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:4px"><img src="https://cdn.simpleicons.org/figma" width="26" height="26" alt="Figma" style="display:block"></div>
+        </div>
+
+        <!-- Premiere Pro — 官方图标 -->
+        <div class="skill-card"><span class="skill-tag">Premiere Pro</span>
+          <div class="tool-icon" style="background:#0d0929;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:4px"><img src="https://cdn.simpleicons.org/adobepremierepro/9999ff" width="26" height="26" alt="Premiere Pro" style="display:block"></div>
+        </div>
+
+        <!-- 剪映 — 无官方图标，手绘 -->
+        <div class="skill-card"><span class="skill-tag">剪映</span>
+          <div class="tool-icon"><svg viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="8" fill="#0d0d0d"/><circle cx="18" cy="18" r="8" fill="none" stroke="#ffffff" stroke-width="1.4"/><path d="M15.5 14v8l7-4z" fill="#ffffff"/></svg></div>
+        </div>
+
+      </div></div></div>
+
+      <!-- AI Agent -->
+      <div class="cv-item"><div class="cv-year">AI Agent</div><div><div class="skills-wrap">
+
+        <!-- Hermes — 无官方图标，手绘 -->
+        <div class="skill-card"><span class="skill-tag">Hermes</span>
+          <div class="tool-icon"><svg viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="8" fill="#1a1000"/><path d="M18 9c-3 3-5 6-5 9s2 6 5 9c3-3 5-6 5-9s-2-6-5-9z" stroke="#f5a623" stroke-width="1.4" fill="none"/><circle cx="18" cy="18" r="2.5" fill="#f5a623"/><path d="M13 12l10 0M13 24l10 0" stroke="#f5a623" stroke-width="1" stroke-linecap="round"/></svg></div>
+        </div>
+
+        <!-- Openclaw — 无官方图标，手绘 -->
+        <div class="skill-card"><span class="skill-tag">Openclaw</span>
+          <div class="tool-icon"><svg viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="8" fill="#0f1923"/><path d="M13 26c0-7 2-14 5-14s5 7 5 14" stroke="#60a5fa" stroke-width="1.8" stroke-linecap="round"/><circle cx="18" cy="12" r="2" fill="#60a5fa"/></svg></div>
+        </div>
+
+        <!-- Claude Code — Anthropic 官方图标 -->
+        <div class="skill-card"><span class="skill-tag">Claude Code</span>
+          <div class="tool-icon" style="background:#1a0f00;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:4px"><img src="https://cdn.simpleicons.org/anthropic/d4a574" width="26" height="26" alt="Claude" style="display:block"></div>
+        </div>
+
+        <!-- Codex — OpenAI 官方图标 -->
+        <div class="skill-card"><span class="skill-tag">Codex</span>
+          <div class="tool-icon" style="background:#0d1117;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:4px"><img src="https://cdn.simpleicons.org/openai/ffffff" width="26" height="26" alt="OpenAI" style="display:block"></div>
+        </div>
+
+        <!-- AI Studio — Google 官方图标 -->
+        <div class="skill-card"><span class="skill-tag">AI Studio</span>
+          <div class="tool-icon" style="background:#0a1628;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:4px"><img src="https://cdn.simpleicons.org/googlegemini/4285f4" width="26" height="26" alt="Google" style="display:block" onerror="this.style.display='none';this.parentElement.innerHTML+='<svg viewBox=\'0 0 26 26\' fill=\'none\'><path d=\'M13 5l2 5h5l-4 3 1.5 5L13 15l-4.5 3 1.5-5-4-3h5z\' fill=\'%234285f4\'/></svg>'"></div>
+        </div>
+
+        <!-- Deepseek — 官方图标 -->
+        <div class="skill-card"><span class="skill-tag">Deepseek</span>
+          <div class="tool-icon" style="background:#001428;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:4px"><img src="https://cdn.simpleicons.org/deepseek/00a3e0" width="26" height="26" alt="Deepseek" style="display:block" onerror="this.parentElement.innerHTML='<svg viewBox=\'0 0 36 36\' fill=\'none\'><rect width=\'36\' height=\'36\' rx=\'8\' fill=\'%23001428\'/><path d=\'M11 22c2-4 4-8 7-8s5 4 7 8\' stroke=\'%2300a3e0\' stroke-width=\'1.8\' stroke-linecap=\'round\' fill=\'none\'/></svg>'"></div>
+        </div>
+
+      </div></div></div>
+
     </div>
   </div>
 </section>
